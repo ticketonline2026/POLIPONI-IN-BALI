@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POLIPONI 2026 • WAITING ROOM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#efede8;
+color:#111;
+overflow-x:hidden;
+background-image:
+linear-gradient(#d0d0d0 1px, transparent 1px),
+linear-gradient(90deg,#d0d0d0 1px, transparent 1px);
+background-size:40px 40px;
+}
+
+/* BACKGROUND */
+
+.bgGlow{
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(120px);
+opacity:.18;
+z-index:-1;
+animation:float 10s infinite ease-in-out;
+}
+
+.g1{
+background:#00d9ff;
+top:-150px;
+left:-100px;
+}
+
+.g2{
+background:#ff5a1f;
+bottom:-150px;
+right:-100px;
+animation-delay:2s;
+}
+
+.g3{
+background:#00d63b;
+top:40%;
+left:40%;
+animation-delay:4s;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-30px);
+}
+}
+
+/* FLOAT ICONS */
+
+.icon{
+position:fixed;
+font-size:80px;
+opacity:.08;
+pointer-events:none;
+animation:rotateFloat 10s infinite ease-in-out;
+z-index:-1;
+}
+
+.i1{
+top:10%;
+left:5%;
+color:#00d9ff;
+}
+
+.i2{
+top:20%;
+right:8%;
+color:#ff5a1f;
+}
+
+.i3{
+bottom:10%;
+left:10%;
+color:#00d63b;
+}
+
+.i4{
+bottom:15%;
+right:10%;
+color:#ffe600;
+}
+
+@keyframes rotateFloat{
+0%,100%{
+transform:translateY(0px) rotate(0deg);
+}
+50%{
+transform:translateY(-25px) rotate(10deg);
+}
+}
+
+/* MAIN */
+
+.wrapper{
+width:100%;
+padding:40px 20px;
+display:flex;
+justify-content:center;
+}
+
+.main{
+width:100%;
+max-width:850px;
+background:#fff;
+border:7px solid #000;
+box-shadow:18px 18px 0 #000;
+overflow:hidden;
+animation:show .8s ease;
+}
+
+@keyframes show{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* TOP */
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:24px;
+border-bottom:7px solid #000;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.logo{
+font-family:'Anton',sans-serif;
+font-size:3rem;
+line-height:1;
+}
+
+.logo span{
+color:#00d63b;
+}
+
+.badge{
+background:#00d63b;
+padding:14px 22px;
+border:4px solid #000;
+font-weight:900;
+box-shadow:6px 6px 0 #000;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.05);
+}
+}
+
+/* CONTENT */
+
+.content{
+padding:28px;
+position:relative;
+}
+
+/* SCAN */
+
+.scan{
+position:absolute;
+top:-120px;
+left:0;
+width:100%;
+height:120px;
+background:linear-gradient(to bottom,
+rgba(255,255,255,0),
+rgba(255,255,255,.45),
+rgba(255,255,255,0));
+animation:scan 6s linear infinite;
+pointer-events:none;
+}
+
+@keyframes scan{
+0%{
+top:-120px;
+}
+100%{
+top:120%;
+}
+}
+
+/* LINEUP */
+
+.lineup{
+background:#00d9ff;
+border:5px solid #000;
+padding:22px;
+font-family:'Anton',sans-serif;
+font-size:2rem;
+text-align:center;
+box-shadow:10px 10px 0 #000;
+margin-bottom:25px;
+animation:wiggle 4s infinite;
+}
+
+@keyframes wiggle{
+0%,100%{
+transform:rotate(0deg);
+}
+50%{
+transform:rotate(.5deg);
+}
+}
+
+/* TITLE */
+
+.title{
+background:#ffe600;
+border:6px solid #000;
+padding:30px;
+font-family:'Anton',sans-serif;
+font-size:4.8rem;
+line-height:1;
+text-align:center;
+box-shadow:12px 12px 0 #000;
+margin-bottom:25px;
+position:relative;
+overflow:hidden;
+}
+
+.title::after{
+content:'LIMITED';
+position:absolute;
+top:15px;
+right:-40px;
+background:#ff5a1f;
+color:#fff;
+padding:10px 55px;
+transform:rotate(35deg);
+font-size:1rem;
+border:3px solid #000;
+}
+
+/* DESC */
+
+.desc{
+font-size:1rem;
+line-height:1.9;
+font-weight:600;
+text-align:center;
+margin-bottom:25px;
+}
+
+/* WARNING */
+
+.warning{
+background:#ff5a1f;
+color:#fff;
+border:5px solid #000;
+padding:20px;
+font-size:1.1rem;
+font-weight:900;
+text-align:center;
+box-shadow:10px 10px 0 #000;
+margin-bottom:25px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%,100%{
+opacity:1;
+}
+50%{
+opacity:.5;
+}
+}
+
+/* LIVE */
+
+.live{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.dot{
+width:14px;
+height:14px;
+background:red;
+border-radius:50%;
+animation:live .8s infinite;
+}
+
+@keyframes live{
+0%,100%{
+opacity:1;
+}
+50%{
+opacity:.2;
+}
+}
+
+/* QUEUE */
+
+.queue{
+background:#00d63b;
+border:6px solid #000;
+padding:30px;
+text-align:center;
+box-shadow:12px 12px 0 #000;
+margin-bottom:25px;
+position:relative;
+overflow:hidden;
+}
+
+.queue::before{
+content:'HIGH TRAFFIC';
+position:absolute;
+top:15px;
+right:-55px;
+background:#000;
+color:#fff;
+padding:8px 60px;
+transform:rotate(35deg);
+font-size:.7rem;
+font-weight:900;
+}
+
+.queue h2{
+font-family:'Anton',sans-serif;
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.queueNum{
+font-family:'Anton',sans-serif;
+font-size:7rem;
+line-height:1;
+color:#fff;
+text-shadow:7px 7px 0 #000;
+animation:queuePulse 1s infinite alternate;
+}
+
+@keyframes queuePulse{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.04);
+}
+}
+
+.queue p{
+margin-top:12px;
+font-weight:700;
+}
+
+/* TIME */
+
+.time{
+background:#fff;
+border:6px solid #000;
+padding:28px;
+box-shadow:12px 12px 0 #000;
+margin-bottom:25px;
+text-align:center;
+}
+
+.time h2{
+font-family:'Anton',sans-serif;
+font-size:2rem;
+margin-bottom:12px;
+}
+
+.fakeTime{
+font-size:3rem;
+font-weight:900;
+color:#00d9ff;
+text-shadow:3px 3px 0 #000;
+margin-bottom:20px;
+}
+
+/* PROGRESS */
+
+.progressWrap{
+width:100%;
+height:30px;
+border:4px solid #000;
+background:#ddd;
+overflow:hidden;
+}
+
+.progress{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#ff5a1f,#ffe600,#00d63b);
+position:relative;
+transition:width 1s linear;
+}
+
+.progress::after{
+content:'';
+position:absolute;
+top:0;
+left:-40%;
+width:40%;
+height:100%;
+background:rgba(255,255,255,.5);
+transform:skewX(-20deg);
+animation:shine 1.2s infinite;
+}
+
+@keyframes shine{
+100%{
+left:140%;
+}
+}
+
+/* TICKET */
+
+.ticket{
+margin-top:18px;
+font-size:1.2rem;
+font-weight:900;
+color:#ff5a1f;
+animation:danger 1s infinite;
+}
+
+@keyframes danger{
+0%,100%{
+opacity:1;
+}
+50%{
+opacity:.4;
+}
+}
+
+/* FEED */
+
+.feed{
+background:#111;
+color:#fff;
+border:5px solid #000;
+padding:20px;
+font-weight:700;
+min-height:80px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+margin-bottom:25px;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-bottom:25px;
+}
+
+.card{
+background:#fff;
+border:5px solid #000;
+padding:18px;
+text-align:center;
+box-shadow:8px 8px 0 #000;
+}
+
+.card h3{
+font-family:'Anton',sans-serif;
+font-size:2.5rem;
+}
+
+.card p{
+font-size:.85rem;
+font-weight:700;
+margin-top:5px;
+}
+
+/* BUTTON */
+
+.btn{
+display:block;
+width:100%;
+background:#999;
+border:6px solid #000;
+padding:26px;
+font-size:1.2rem;
+font-weight:900;
+text-decoration:none;
+color:#000;
+text-align:center;
+box-shadow:12px 12px 0 #000;
+transition:.3s;
+pointer-events:none;
+opacity:.6;
+cursor:not-allowed;
+}
+
+.btn.active{
+background:#00d9ff;
+pointer-events:auto;
+opacity:1;
+cursor:pointer;
+}
+
+.btn.active:hover{
+transform:translate(-5px,-5px);
+box-shadow:18px 18px 0 #000;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:#fff;
+padding:18px;
+text-align:center;
+font-size:.9rem;
+font-weight:700;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.title{
+font-size:2.8rem;
+}
+
+.lineup{
+font-size:1.2rem;
+}
+
+.queueNum{
+font-size:4.5rem;
+}
+
+.fakeTime{
+font-size:2rem;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.logo{
+font-size:2rem;
+}
+
+.content{
+padding:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bgGlow g1"></div>
+<div class="bgGlow g2"></div>
+<div class="bgGlow g3"></div>
+
+<div class="icon i1">⚡</div>
+<div class="icon i2">❤</div>
+<div class="icon i3">✦</div>
+<div class="icon i4">〰</div>
+
+<div class="wrapper">
+
+<div class="main">
+
+<div class="top">
+
+<div class="logo">
+POLIPONI <span>2026</span>
+</div>
+
+<div class="badge">
+PENAMBAHAN TIKET RESMI
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="scan"></div>
+
+<div class="lineup">
+SHEILA ON 7 • HINDIA • FEAST • 510 • DIALOG DINI HARI
+</div>
+
+<div class="title">
+50 TIKET<br>
+TAMBAHAN
+</div>
+
+<div class="desc">
+Karena tingginya antusiasme POLIPONI BALI 2026, sistem sedang membuka akses bertahap untuk pembelian tambahan tiket terbatas.
+</div>
+
+<div class="warning">
+⚠ JANGAN REFRESH ATAU MENUTUP HALAMAN • SISTEM SEDANG MEMPROSES ANTRIAN PEMBELIAN
+</div>
+
+<div class="live">
+<div class="dot"></div>
+<div>LIVE HIGH TRAFFIC WAITING ROOM</div>
+</div>
+
+<div class="queue">
+
+<h2>NOMOR ANTRIAN PEMBELIAN</h2>
+
+<div class="queueNum" id="queueNum">
+1847
+</div>
+
+<p>
+Antrian dapat berubah sewaktu-waktu karena traffic tinggi
+</p>
+
+</div>
+
+<div class="time">
+
+<h2>ESTIMASI WAKTU ANTRIAN</h2>
+
+<div class="fakeTime" id="fakeTime">
+2 JAM 12 MENIT
+</div>
+
+<div class="progressWrap">
+<div class="progress" id="progress"></div>
+</div>
+
+<div class="ticket">
+🔥 AKSES PEMBELIAN AKAN TERBUKA OTOMATIS
+</div>
+
+</div>
+
+<div class="feed" id="feed">
+23 orang baru saja membeli tiket Premium...
+</div>
+
+<div class="stats">
+
+<div class="card">
+<h3 id="premium">84</h3>
+<p>TIKET PREMIUM TERJUAL</p>
+</div>
+
+<div class="card">
+<h3 id="festival">113</h3>
+<p>TIKET FESTIVAL TERJUAL</p>
+</div>
+
+<div class="card">
+<h3 id="online">4271</h3>
+<p>PENGGUNA ONLINE</p>
+</div>
+
+</div>
+
+<a href="https://poliponii2026.github.io/Deskripsi-poliponi/"
+class="btn"
+id="buyBtn">
+MENUNGGU AKSES PEMBELIAN...
+</a>
+
+</div>
+
+<div class="footer">
+POLIPONI BALI 2026 • OFFICIAL WAITING ROOM
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* QUEUE */
+
+const queue = document.getElementById('queueNum');
+
+setInterval(()=>{
+
+let current = parseInt(queue.innerText);
+
+let random = Math.floor(Math.random()*35);
+
+if(Math.random() > 0.5){
+current += random;
+}else{
+current -= random;
+}
+
+if(current < 1000){
+current = 1000;
+}
+
+queue.innerText = current;
+
+},1800);
+
+/* TIME */
+
+const fakeTime = document.getElementById('fakeTime');
+
+const times = [
+
+'2 JAM 12 MENIT',
+'53 MENIT',
+'2 JAM 31 MENIT',
+'20 MENIT',
+'2 JAM 08 MENIT',
+'5 MENIT'
+
+];
+
+setInterval(()=>{
+
+let random = Math.floor(Math.random()*times.length);
+
+fakeTime.innerText = times[random];
+
+},4000);
+
+/* FEED */
+
+const feed = document.getElementById('feed');
+
+const messages = [
+
+'🔥 23 orang baru saja membeli tiket Premium...',
+'⚡ 14 tiket Festival baru saja terjual...',
+'🎫 Permintaan tiket meningkat drastis...',
+'🚨 Tiket tambahan tersisa kurang dari 150...',
+'🔥 41 orang sedang checkout tiket...',
+'⚡ Sistem sedang memproses traffic tinggi...',
+'🎟 Tiket Fast Track hampir sold out...',
+'🚨 Banyak pengguna sedang memasuki waiting room...',
+'🔥 Penjualan meningkat dalam 1 menit terakhir...',
+'⚡ Jangan refresh halaman ini...'
+
+];
+
+setInterval(()=>{
+
+let random = Math.floor(Math.random()*messages.length);
+
+feed.innerHTML = messages[random];
+
+},2500);
+
+/* COUNTERS */
+
+function increase(id,min,max){
+
+setInterval(()=>{
+
+let el = document.getElementById(id);
+
+let val = parseInt(el.innerText);
+
+val += Math.floor(Math.random()*(max-min)+min);
+
+el.innerText = val;
+
+},3000);
+
+}
+
+increase('premium',1,4);
+increase('festival',1,5);
+increase('online',5,20);
+
+/* TITLE */
+
+setInterval(()=>{
+
+document.title =
+document.title === 'POLIPONI 2026 • WAITING ROOM'
+? '🔥 HIGH TRAFFIC • PENAMBAHAN TIKET'
+: 'POLIPONI 2026 • WAITING ROOM';
+
+},1500);
+
+/* ========================= */
+/* REAL 3 MINUTES SYSTEM */
+/* ========================= */
+
+const buyBtn =
+document.getElementById('buyBtn');
+
+const progress =
+document.getElementById('progress');
+
+let duration = 180;
+let current = duration;
+
+const countdown = setInterval(()=>{
+
+current--;
+
+/* PROGRESS */
+
+const percent =
+((duration - current) / duration) * 100;
+
+progress.style.width =
+percent + '%';
+
+/* FINISH */
+
+if(current <= 0){
+
+clearInterval(countdown);
+
+/* AKTIFKAN TOMBOL */
+
+buyBtn.classList.add('active');
+
+buyBtn.innerText =
+'MASUK KE PEMBELIAN TIKET';
+
+/* REDIRECT OTOMATIS */
+
+window.location.href =
+'https://poliponii2026.github.io/Deskripsi-poliponi/';
+
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>
